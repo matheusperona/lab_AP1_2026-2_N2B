@@ -84,7 +84,18 @@ public class Motorista {
      * Lista vazia → BRONZE.
      */
     public Categoria categoria() {
-        //TODO Tarefa 2
+
+        if categoria() == Categoria.PRATA{
+            return Categoria.PRATA;
+        }
+        else if categoria() == Categoria.OURO{
+            return Categoria.OURO;
+        }
+        else if categoria() == Categoria.DIAMANTE{
+            return Categoria.DIAMANTE;
+        }
+
+
         return Categoria.BRONZE;
     }
 
@@ -94,7 +105,10 @@ public class Motorista {
      */
     public double ganhoLiquido() {
         //TODO Tarefa 3
-        return 0.0;
+        if kmRodados() < 500{
+            return faturamentoBruto()* Categoria.getComissao();
+        }
+        return (faturamentoBruto() * Categoria.getComissao()) / 2;
     }
 
     public String resumo() {
